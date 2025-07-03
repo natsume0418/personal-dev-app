@@ -34,11 +34,13 @@ docker-compose up --build
 
 ## 📁 ディレクトリ構成
 
+```bash
 /backend       Spring Boot バックエンド
 /frontend      Next.js フロントエンド
 /db            schema.sql, data.sql（初期DB構築スクリプト）
 docker-compose.yml
 README.md
+```
 
 ---
 
