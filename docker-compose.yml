@@ -1,0 +1,50 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: shima_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: shima_db
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: pass
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./db:/docker-entrypoint-initdb.d
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    container_name: shima_backend
+    ports:
+      - "8080:8080"
+    # volumes:
+    #   - ./backend:/app
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/shima_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo
+      SPRING_DATASOURCE_USERNAME: appuser
+      SPRING_DATASOURCE_PASSWORD: pass
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASE_URL=http://localhost:8080
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  db-data:
