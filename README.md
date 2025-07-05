@@ -13,8 +13,6 @@ Spring Boot + MySQL + Next.js によるフルスタックアプリケーショ�
 | [Git](https://git-scm.com/downloads) | ソースコード管理ツール | https://git-scm.com/downloads |
 | [Docker Desktop](https://www.docker.com/products/docker-desktop) | コンテナ実行環境 | https://www.docker.com/products/docker-desktop |
 
-⚠️ Java / Node.js / Maven は Docker コンテナ内で動くため **PCに直接インストールする必要はありません！**
-
 ---
 
 ## 🚀 環境構築・起動手順
@@ -24,9 +22,9 @@ Spring Boot + MySQL + Next.js によるフルスタックアプリケーショ�
 git clone git@github.com:shima-private/training-PJ.git
 
 # 2. ディレクトリへ移動
-cd your-repo
+cd your-local-repo
 
-# 3. Dockerでビルド＆起動（初回は --build 推奨）
+# 3. Dockerでビルド＆起動
 docker-compose up --build
 ```
 
@@ -38,6 +36,7 @@ docker-compose up --build
 /backend       Spring Boot バックエンド
 /frontend      Next.js フロントエンド
 /db            schema.sql, data.sql（初期DB構築スクリプト）
+/docs          開発ドキュメント
 docker-compose.yml
 README.md
 ```
