@@ -8,6 +8,9 @@ COPY mvnw .
 COPY pom.xml .
 COPY src ./src
 
+# mvnw に実行権限を付与
+RUN chmod +x ./mvnw
+
 RUN ./mvnw clean package -DskipTests
 
 # 2. 実行ステージ
