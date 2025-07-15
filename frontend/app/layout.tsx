@@ -1,16 +1,16 @@
 export const metadata = {
-  title: 'My App',
-  description: 'App Router Demo',
+    title: 'My App',
+    description: 'App Router Demo',
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body>{children}</body>
+        </html>
+    );
 }
