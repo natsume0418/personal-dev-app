@@ -23,7 +23,9 @@ const InputTextBox: React.FC<InputTextBoxProps> = ({
   return (
     <>
       <div className="input-wrapper">
-        <label className="input-label">{label}</label>
+        <label htmlFor={name} className="input-label">
+          {label}
+        </label>
         <input
           type="text"
           name={name}
