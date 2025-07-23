@@ -52,7 +52,7 @@ const Login: React.FC = () => {
       return;
     }
     setLoginError("");
-    console.log("ログイン処理:", Form);
+    router.push("/register");
   };
 
   /**
