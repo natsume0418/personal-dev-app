@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'My App',
-  description: 'App Router Demo',
+  title: "My App",
+  description: "App Router Demo",
 };
 
 export default function RootLayout({

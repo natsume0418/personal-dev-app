@@ -1,0 +1,23 @@
+.input-wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.input-label {
+    width: 120px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.error-message {
+    color: red;
+    display: flex;
+    justify-content: center;
+}
